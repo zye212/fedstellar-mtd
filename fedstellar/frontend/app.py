@@ -1023,7 +1023,7 @@ def fedstellar_scenario_deployment_run():
                 #     "target_aggregation"
                 # ]
 
-                # Zi Ye
+                
                 # Begin
                 participant_config["defense_args"]["dynamic_aggregation_mode"] = data[
                     "dynamic_aggregation_mode"

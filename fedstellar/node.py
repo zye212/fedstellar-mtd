@@ -175,7 +175,7 @@ class Node(BaseNode):
         self.poisoned_ratio = poisoned_ratio
         self.noise_type = noise_type
 
-        # Zi Ye
+        
         # Begin
         # Logging box with attack information
         attack_msg = f"Model poisoning: {self.model_poisoning}\nPoisoned ratio: {self.poisoned_ratio}\nNoise type: {self.noise_type}"
@@ -317,12 +317,12 @@ class Node(BaseNode):
         malicious_nodes = msg.args  # List of malicious nodes
         logging.info(f"({self.addr}) Received reputation from {msg.source} with malicious nodes {malicious_nodes}")
         if self.with_reputation:
-            # Zi Ye
+            
             if len(malicious_nodes) > 0 and not self.__is_malicious and self.get_name() not in malicious_nodes:
                 if self.is_dynamic_topology:
                     self.__disrupt_connection_using_reputation(malicious_nodes)
   
-                # Zi Ye                    
+                                    
                 # Check if dynamic aggregation with Reactive mode is enabled
                 if (self.is_dynamic_aggregation) and (self.dynamic_aggregation_mode == "Reactive"):
                     logging.info(f"({self.addr}) (Reputation callback) Reactive Dynamic aggregation function is enabled for round {self.round}. Randomly select an aggregation function.")
@@ -331,7 +331,7 @@ class Node(BaseNode):
                     # Call the dynamic aggregator function, change the aggregator to the target aggregation function
                     self.__dynamic_aggregator(self.aggregator.get_aggregated_models_weights(), malicious_nodes)               
 
-    # Zi Ye
+    
     def __randomly_select_aggregation_function(self):
         """
         Randomly selects an aggregation function from a pool of aggregation functions.
@@ -1124,7 +1124,7 @@ class Node(BaseNode):
             logging.warning("[NODE.__train_step] Role not implemented yet")
 
 
-        # Zi Ye
+        
         # dynamic aggregation function      
         if self.round is not None:
             if self.with_reputation and not self.__is_malicious:

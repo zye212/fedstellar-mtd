@@ -175,7 +175,7 @@ class LightningLearner(NodeLearner):
                 # self.log_validation_metrics(loss, metric, self.round)
                 # return loss, metric
 
-                # Zi Ye
+                
                 # Begin
                 self.create_trainer()
                 results = self.__trainer.test(self.model, self.data, verbose=True)
